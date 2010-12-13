@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "nirvanahq"
   gem.homepage = "http://github.com/meeech/nirvanahq"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{lib to interact with nirvanahq.com}
+  gem.description = %Q{Gem to ineract with nirvanahq.com api}
   gem.email = "mitchell.amihod@gmail.com"
   gem.authors = ["Mitchell Amihod"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
