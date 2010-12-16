@@ -1,0 +1,16 @@
+PATH
+  remote: .
+  specs:
+    nirvanahq (0.0.1)
+      json
+
+GEM
+  specs:
+    json (1.4.6)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  json
+  nirvanahq!
