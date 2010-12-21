@@ -1,3 +1,5 @@
-A simple gem template
+~/.nirvanahq/config.rb
 
-Copyright (c) 2010 Gonçalo Silva
+
+todo
+create config folder if not found
