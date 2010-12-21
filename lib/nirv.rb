@@ -20,7 +20,6 @@ class Controller < SimpleConsole::Controller
   def initialize
     super
     @my_app_name = 'nirv'
-    # @version = '0.1'
     @nirvana = NirvanaHQ.new $nirvana_config    
   end
   
@@ -30,6 +29,43 @@ class Controller < SimpleConsole::Controller
 
   def method_missing name = "method_missing"
     puts "Method #{name} does not exist. Try '#{@my_app_name} help'."
+  end
+
+  def add
+    # allow basic add action - nirv add "task name" without having 
+    # to speicify the name explicitly
+    params[:name] = params[:name]  || params[:id]
+
+    if params[:name]
+
+      #prepare payload
+      now = Time.now.to_i
+
+      #set some sane defaults.
+      task = {
+        "method" => "task.save",
+        "id" => UUID.generate,
+        "type" => 0,
+        "_type" => now,
+        "state" => 0,
+        "_state" => now,
+      }
+      
+      #@commentplz: anyone know better way to do this? still new to rb
+      [:name, :tags, :note ].each do | tag |
+        begin 
+          task[tag] = params[tag] 
+          task["_#{tag}"] = now 
+        end if params[tag]
+      end
+
+      #obviously, need to rethink this, and how we handle errors
+      result = @nirvana.add task
+      @message = "Added task: #{params[:name]}"
+      
+    else 
+      @message = "Missing name of task, which is the bare minimum. Try '#{@my_app_name} help'."
+    end
   end
   
   #totally lifted from UUID gem. 

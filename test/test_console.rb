@@ -42,9 +42,14 @@ module NirvanaHQTests
       assert out.string.include? " - "
     end
 
+    # @todo can we store the UUID to use in test_delete?
     def test_add
+      task_name = "Test Task Add"
+      out = capture_stdout do
+        SimpleConsole::Application.run([:add, task_name], Controller, View)
+      end
 
-      assert false
+      assert_equal out.string, "Added task: #{task_name}\n"
     end
 
   end
