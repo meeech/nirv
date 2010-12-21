@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "json", ">= 0"
   
   # If you have development dependencies, add them here
-  # s.add_development_dependency "another", "= 0.9"
+  s.add_development_dependency "rake"
+  s.add_development_dependency "mocha"
 
   # The list of files to be contained in the gem
   s.files         = `git ls-files`.split("\n")

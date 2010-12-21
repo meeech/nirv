@@ -7,10 +7,15 @@ PATH
 GEM
   specs:
     json (1.4.6)
+    mocha (0.9.10)
+      rake
+    rake (0.8.7)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   json
+  mocha
   nirvanahq!
+  rake
