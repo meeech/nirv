@@ -3,14 +3,19 @@ PATH
   specs:
     nirvanahq (0.0.1)
       json
+      simpleconsole
+      uuid
 
 GEM
   specs:
     json (1.4.6)
+    macaddr (1.0.0)
     mocha (0.9.10)
       rake
     rake (0.8.7)
-    redgreen (1.2.2)
+    simpleconsole (0.1.1)
+    uuid (2.3.1)
+      macaddr (~> 1.0)
 
 PLATFORMS
   ruby
@@ -20,4 +25,5 @@ DEPENDENCIES
   mocha
   nirvanahq!
   rake
-  redgreen
+  simpleconsole
+  uuid
