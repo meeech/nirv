@@ -18,7 +18,7 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
-
+# Simple stub to get a json version of a task payload
 def task_json
   File.open("examples/task.json", 'r').read
 end

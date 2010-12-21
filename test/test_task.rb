@@ -19,6 +19,7 @@ module NirvanaHQTests
       assert result.keys.include?('results')
       assert result['results'][0]
       assert result['results'][0].keys.include?('task')
+      assert_equal result['results'][0]['task']['id'], @task["id"]
     end
 
     def test_get_task
