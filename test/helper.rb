@@ -7,6 +7,10 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
 require 'nirvanahq'
 
+def task_json
+  File.open("examples/task.json", 'r').read
+end
+
 def boom_json(name)
   Boom::Storage.any_instance.stubs(:json_file).
     returns("test/examples/#{name}.json")

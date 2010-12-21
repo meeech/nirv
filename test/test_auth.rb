@@ -1,6 +1,6 @@
 require "helper"
 
-module NirvanaHQAuthTests
+module NirvanaHQTests
   
   class NirvanaHQAuthTest < Test::Unit::TestCase
   
@@ -18,6 +18,9 @@ module NirvanaHQAuthTests
     end
 
     def test_save_token_should_raise_empty_token_error
+      #@q not sure if this best way to handle a raise? 
+      # since its runtime error, there could be some other RTE error
+      # how can i check the message? 
       assert_raise RuntimeError do
         @nirvauth.save_token!(nil)        
       end
