@@ -3,7 +3,6 @@ require "rubygems"
 require "simpleconsole"
 require "uuid"
 
-# How to include this properly?
 $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 require "nirvanahq"
 
