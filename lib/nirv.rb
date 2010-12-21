@@ -70,11 +70,12 @@ class Controller < SimpleConsole::Controller
   
   #totally lifted from UUID gem. 
   def version
-    version = Gem::Specification.load(File.expand_path("../nirvanahq.gemspec", File.dirname(__FILE__))).version.to_s.split(".").map { |i| i.to_i }
-    major = version[0]
-    minor = version[1]
-    patch = version[2]
-    @message = @my_app_name << " - " << "#{major}.#{minor}.#{patch}"
+    # Issue: Was getting fatal .git errors in built version.
+    # Okay! Totally boneheaded, but basically, if you using things like `git` in your gemspec, then you can't access the file
+    # dynamically. I assumed its making a copy of the 
+    # version = Gem::Specification.load(File.expand_path("../nirvanahq.gemspec", File.dirname(__FILE__))).version.to_s.split(".").map { |i| i.to_i }
+    # @todo move to VERSION txt file
+    @message = @my_app_name << " - " << NirvanaHQ::VERSION
   end
   
 end
