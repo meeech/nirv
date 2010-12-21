@@ -1,11 +1,12 @@
-require File.expand_path(File.dirname(__FILE__) + "/test_helper")
+require "test_helper"
 
 module NirvanaHQAuthTests
   
   class NirvanaHQAuthTest < Test::Unit::TestCase
     
-    def test_initialize
-      
+    def test_fetch_token
+      token = ''
+      assert_equal 36, token.length
     end
     
   end
