@@ -1,7 +1,11 @@
+#!/usr/bin/env ruby -w
 require "rubygems"
 require "simpleconsole"
 require "uuid"
-require File.dirname(__FILE__) + "/lib/nirvanahq.rb"
+
+# How to include this properly?
+$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
+require "nirvanahq"
 
 # @q how to deal with problems - ie: missing params? tried raise but having an issues
 #   - the raise keeps bubbling up so need to play with those more to see what i'm doing wrong
