@@ -9,13 +9,25 @@ require "uuid"
 
 class Controller < SimpleConsole::Controller
 
+  params  :string => {
+            :a => :name, 
+            :t => :tags
+          },
+          :text => {:n => :note}
+
+
+
   def initialize
     super
-    @my_app_name = File.basename(__FILE__)
+    @my_app_name = 'nirv'
     # @version = '0.1'
     # @nirvana = Nirvanahq.new $config    
   end
   
+  def default
+    @message = "Hi. Try '#{@my_app_name} help' for a list of commands."
+  end  
+
   def method_missing name = "method_missing"
     puts "Method #{name} does not exist. Try '#{@my_app_name} help'."
   end
@@ -23,6 +35,10 @@ class Controller < SimpleConsole::Controller
 end
 
 class View < SimpleConsole::View
+
+  def default
+    puts @message    
+  end
   
 end
 
