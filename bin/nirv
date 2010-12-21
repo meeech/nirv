@@ -1,3 +1,8 @@
 require "rubygems"
 require "simpleconsole"
 require "uuid"
+require File.dirname(__FILE__) + "/lib/nirvanahq.rb"
+
+# @q how to deal with problems - ie: missing params? tried raise but having an issues
+#   - the raise keeps bubbling up so need to play with those more to see what i'm doing wrong
+# @todo How do you test a simpleconsole program? Ay advice would be appreciated tbd
