@@ -1,7 +1,6 @@
 require 'helper'
 require "nirv"
 
-
 # Used to capture output, which we can then check against.
 require 'stringio'
  
@@ -21,7 +20,7 @@ end
 
 module NirvanaHQTests
 
-  class TestLibraryFileName < Test::Unit::TestCase
+  class TestNirvConsole < Test::Unit::TestCase
 
     def test_method_missing
       out = capture_stdout do
@@ -29,6 +28,16 @@ module NirvanaHQTests
       end
 
       assert out.string.include? "Method fakeaction does not exist"
+    end
+
+    def test_nirvanahq_instance
+      console = Controller.new
+      assert_equal NirvanaHQ, console.nirvana.class
+    end
+
+    def test_add
+
+      assert false
     end
 
   end

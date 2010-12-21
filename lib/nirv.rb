@@ -9,19 +9,19 @@ require "uuid"
 
 class Controller < SimpleConsole::Controller
 
+  attr_reader :nirvana
+
   params  :string => {
             :a => :name, 
             :t => :tags
           },
           :text => {:n => :note}
 
-
-
   def initialize
     super
     @my_app_name = 'nirv'
     # @version = '0.1'
-    # @nirvana = Nirvanahq.new $config    
+    @nirvana = NirvanaHQ.new $nirvana_config    
   end
   
   def default
@@ -35,6 +35,10 @@ class Controller < SimpleConsole::Controller
 end
 
 class View < SimpleConsole::View
+
+  def add
+    puts @message    
+  end
 
   def default
     puts @message    
