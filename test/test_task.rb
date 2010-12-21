@@ -1,17 +1,24 @@
 require "helper"
+require 'yaml'
 
 module NirvanaHQTests
 
   class NirvanaHQTaskTest < Test::Unit::TestCase
     def setup
-      @nirvauth = NirvanaHQ::Auth.new $nirvana_config
-      @nirvtask = NirvanaHQ::Task
+      @nirv = NirvanaHQ.new $nirvana_config
+      @task = JSON.parse(task_json)
     end
-# @bookmark
-# maybe just make everything one class, but can still keep sep?
-# or just create a master class to inject these pieces into?
+
     def test_add_task
-      @nirvtask.add task_json
+      # task.add expects a hash
+
+      result = @nirv.add @task
+
+      result = JSON.parse(result)
+
+      assert result.keys.include?('results')
+      assert result['results'][0]
+      assert result['results'][0].keys.include?('task')
     end
   end
 
