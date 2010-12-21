@@ -35,6 +35,13 @@ module NirvanaHQTests
       assert_equal NirvanaHQ, console.nirvana.class
     end
 
+    def test_version
+      out = capture_stdout do
+        SimpleConsole::Application.run([:version], Controller, View)
+      end
+      assert out.string.include? " - "
+    end
+
     def test_add
 
       assert false

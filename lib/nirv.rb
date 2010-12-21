@@ -32,12 +32,25 @@ class Controller < SimpleConsole::Controller
     puts "Method #{name} does not exist. Try '#{@my_app_name} help'."
   end
   
+  #totally lifted from UUID gem. 
+  def version
+    version = Gem::Specification.load(File.expand_path("../nirvanahq.gemspec", File.dirname(__FILE__))).version.to_s.split(".").map { |i| i.to_i }
+    major = version[0]
+    minor = version[1]
+    patch = version[2]
+    @message = @my_app_name << " - " << "#{major}.#{minor}.#{patch}"
+  end
+  
 end
 
 class View < SimpleConsole::View
 
   def add
     puts @message    
+  end
+
+  def version
+    puts @message
   end
 
   def default
