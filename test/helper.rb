@@ -20,7 +20,7 @@ end
 
 # Simple stub to get a json version of a task payload
 def task_json
-  File.open("examples/task.json", 'r').read
+  File.open(File.dirname(__FILE__) + "/examples/task.json", 'r').read
 end
 
 def boom_json(name)

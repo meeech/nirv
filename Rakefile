@@ -11,9 +11,9 @@ task :default => :test
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = false
+  test.libs << "test"
+  test.test_files = FileList['test/test*.rb']
+  test.verbose = true
 end
 
 desc "Validate the gemspec"

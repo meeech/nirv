@@ -1,4 +1,4 @@
-require 'helper'
+require File.dirname(__FILE__) + "/helper"
 require "nirv"
 
 # Used to capture output, which we can then check against.
