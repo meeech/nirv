@@ -28,7 +28,7 @@ module NirvanaHQTests
         SimpleConsole::Application.run([:fakeaction], Controller, View)
       end
 
-      assert_equal out.string, 'foo'
+      assert out.string.include? "Method fakeaction does not exist"
     end
 
   end
