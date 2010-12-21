@@ -20,6 +20,17 @@ module NirvanaHQTests
       assert result['results'][0]
       assert result['results'][0].keys.include?('task')
     end
+
+    def test_get_task
+      assert false
+    end
+    
+    def test_delete_task
+      #todo
+      assert false
+    end
+    
+    
   end
 
 end
