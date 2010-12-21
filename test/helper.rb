@@ -1,5 +1,6 @@
 require 'test/unit'
 require 'rubygems'
+# require 'redgreen'
 require 'mocha'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))

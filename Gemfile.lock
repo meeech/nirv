@@ -10,6 +10,7 @@ GEM
     mocha (0.9.10)
       rake
     rake (0.8.7)
+    redgreen (1.2.2)
 
 PLATFORMS
   ruby
@@ -19,3 +20,4 @@ DEPENDENCIES
   mocha
   nirvanahq!
   rake
+  redgreen
