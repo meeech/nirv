@@ -43,8 +43,22 @@ module NirvanaHQTests
       assert result.keys.include?('results')
       assert result['results'][0]
       assert result['results'][0].keys.include?('task')
-      assert 0 != result['results'][0]['task']['deleted']      
+      assert "0" != result['results'][0]['task']['deleted']      
     end
+
+    def test_undelete_task
+      result = @nirvana.undelete @task['id']
+      result = JSON.parse(result)
+
+      assert result.keys.include?('results')
+      assert result['results'][0]
+      assert result['results'][0].keys.include?('task')
+      assert_equal "0", result['results'][0]['task']['deleted']
+      
+      # and clean it up
+      @nirvana.delete @task['id']
+    end
+
 
   end
 

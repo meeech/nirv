@@ -48,4 +48,17 @@ class NirvanaHQ
     self.post [task].to_json
   end
 
+  def undelete task_id
+
+    task = {
+      "method" => "task.save",
+      "id" => task_id,
+      "deleted" => 0,
+      "_deleted" => Time.now.to_i
+    }
+
+    self.post [task].to_json
+  end
+
+
 end
