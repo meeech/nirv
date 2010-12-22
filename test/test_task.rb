@@ -1,11 +1,14 @@
 require File.dirname(__FILE__) + "/helper"
 
+
 module NirvanaHQTests
 
   class NirvanaHQTaskTest < Test::Unit::TestCase
     def setup
+      @task = YAML::load File.open(File.dirname(__FILE__) + "/examples/task.yaml")
+      p @task
+      
       @nirvana = NirvanaHQ.new $nirvana_config
-      @task = JSON.parse(task_json)
     end
 
     # Will need to rethink this test, or need to get the hang of stubbin, 
@@ -21,15 +24,28 @@ module NirvanaHQTests
       assert keys.include? "task"
     end
 
-    def test_add_task
+    def new_task
+      task = {
+        "id" => UUID.generate,
+        "name" => "Test Task #{rand(100)}",
+        "_name" => Time.now.to_i
+      }
+
+      YAML::dump(task, File.open( File.dirname(__FILE__)+'/examples/task.yaml', 'w' ))
+      sleep 1
+    end
+
+    def test_add_task      
+      task = self.new_task
+      puts "Creating #{task['name']}\n"
       # task.add expects a hash
-      result = @nirvana.add @task
+      result = @nirvana.add task
       result = JSON.parse(result)
 
       assert result.keys.include?('results')
       assert result['results'][0]
       assert result['results'][0].keys.include?('task')
-      assert_equal @task["id"], result['results'][0]['task']['id']
+      assert_equal task["id"], result['results'][0]['task']['id']
     end
 
     def test_get_task

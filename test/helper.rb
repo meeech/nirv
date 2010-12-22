@@ -2,6 +2,7 @@ require 'test/unit'
 require 'rubygems'
 require 'redgreen' if ENV['TM_FILENAME'].nil?
 require 'mocha'
+require 'yaml'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
@@ -16,9 +17,4 @@ rescue Bundler::BundlerError => e
   $stderr.puts e.message
   $stderr.puts "Run `bundle install` to install missing gems"
   exit e.status_code
-end
-
-# Simple stub to get a json version of a task payload
-def task_json
-  File.open(File.dirname(__FILE__) + "/examples/task.json", 'r').read
 end
