@@ -3,7 +3,6 @@ require 'uuid'
 class NirvanaHQ
 
   def post payload
-    puts "posting" + payload.inspect
     result = `curl -sX POST 'https://api.nirvanahq.com/?api=json&authtoken=#{@token}' -d '#{payload}'`  
   end
 

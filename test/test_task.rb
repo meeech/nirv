@@ -19,10 +19,10 @@ module NirvanaHQTests
       assert_equal @task["id"], result['results'][0]['task']['id']
     end
 
-    # def test_get_task
-    # 
-    #   assert false
-    # end
+    def test_get_task
+    
+      assert false
+    end
     
     def test_trash_task
       result = @nirvana.trash @task['id']
