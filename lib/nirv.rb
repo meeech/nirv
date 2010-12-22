@@ -40,6 +40,7 @@ class Controller < SimpleConsole::Controller
       #prepare payload
       # @q: anyone know better way to do this? still new to rb
       now = Time.now.to_i
+      task = {}
       [:name, :tags, :note ].each do | key |
         begin 
           task[key] = params[key] 
