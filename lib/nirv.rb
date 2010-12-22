@@ -1,7 +1,6 @@
 # The Command Line tool for NirvanaHQ
 require "rubygems"
 require "simpleconsole"
-require "uuid"
 
 # @q how to deal with problems - ie: missing params? tried raise but having an issues
 #   - the raise keeps bubbling up so need to play with those more to see what i'm doing wrong
@@ -61,11 +60,12 @@ class Controller < SimpleConsole::Controller
     
   end
   
-  #totally lifted from UUID gem. 
   def version
     # Issue: Was getting fatal .git errors in built version.
-    # Okay! Totally boneheaded, but basically, if you using things like `git` in your gemspec, then you can't access the file
-    # dynamically. I assumed its making a copy of the 
+    # Okay! Totally boneheaded, but basically, if you using things 
+    # like `git` in your gemspec, then you can't access the file
+    # dynamically. I assumed its making a copy of the parsed gemspec., which I could access this info. 
+    # was lifted from from UUID gem. 
     # version = Gem::Specification.load(File.expand_path("../nirvanahq.gemspec", File.dirname(__FILE__))).version.to_s.split(".").map { |i| i.to_i }
     # @todo move to VERSION txt file
     @message = @my_app_name << " - " << NirvanaHQ::VERSION

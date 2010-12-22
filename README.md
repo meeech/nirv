@@ -24,12 +24,12 @@ with tags & a note:
 **nirv help** : list all commands
 
 
+Todo
+----
 
-Roadmap
--------
-
-
-
+* add post install action - create ~/.nirvanahq
+* switch test/example/task.json to task.rb so we can have some dyn info
+* test what happens when a different user tries
 
 ~/.nirvanahq/config.rb
 
