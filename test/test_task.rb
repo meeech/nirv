@@ -19,10 +19,10 @@ module NirvanaHQTests
       assert_equal @task["id"], result['results'][0]['task']['id']
     end
 
-    def test_get_task
-
-      assert false
-    end
+    # def test_get_task
+    # 
+    #   assert false
+    # end
     
     def test_trash_task
       result = @nirvana.trash @task['id']
@@ -33,6 +33,18 @@ module NirvanaHQTests
       assert result['results'][0].keys.include?('task')
       assert_equal "6", result['results'][0]['task']['state']
     end 
+
+    # more destructive. No way to recover (afaik) via ui
+    # here more as an example than anything else.
+    def test_delete_task
+      result = @nirvana.delete @task['id']
+      result = JSON.parse(result)
+
+      assert result.keys.include?('results')
+      assert result['results'][0]
+      assert result['results'][0].keys.include?('task')
+      assert 0 != result['results'][0]['task']['deleted']      
+    end
 
   end
 

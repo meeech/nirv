@@ -24,7 +24,6 @@ class NirvanaHQ
     self.post [task].to_json
   end
 
-
   def trash task_id
 
     task = {
@@ -32,6 +31,18 @@ class NirvanaHQ
       "id" => task_id,
       "state" => 6,
       "_state" => Time.now.to_i
+    }
+
+    self.post [task].to_json
+  end
+
+  def delete task_id
+
+    task = {
+      "method" => "task.save",
+      "id" => task_id,
+      "deleted" => Time.now.to_i,
+      "_deleted" => Time.now.to_i
     }
 
     self.post [task].to_json
