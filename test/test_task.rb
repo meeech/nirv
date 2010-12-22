@@ -60,6 +60,10 @@ module NirvanaHQTests
       @nirvana.delete @task['id']
     end
 
+    def test_backup
+      assert false
+    end
+
   end
 
 end
