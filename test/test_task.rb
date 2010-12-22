@@ -37,6 +37,9 @@ module NirvanaHQTests
       assert false
     end
     
+    # this fails when run as part of all the tests, but is fine when run solo, after running add.
+    # most likely just a timeing issue or order of tests issue. 
+    # need depends on, which should be part of a testing lib somewhere.
     def test_trash_task
       result = @nirvana.trash @task['id']
       result = JSON.parse(result)
