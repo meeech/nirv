@@ -53,10 +53,8 @@ module NirvanaHQTests
     end
     
     def test_backup
-
       SimpleConsole::Application.run([:backup], Controller, View)
-      
-      assert false
+      assert File.exists? Controller::BACKUP_FILE
     end
     
 

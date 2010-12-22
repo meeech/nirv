@@ -16,6 +16,8 @@ class Controller < SimpleConsole::Controller
           },
           :text => {:n => :note}
 
+  BACKUP_FILE = "#{ENV['HOME']}/.nirvanahq/backup.json"
+
   def initialize
     super
     @my_app_name = 'nirv'
@@ -59,6 +61,9 @@ class Controller < SimpleConsole::Controller
   
   def backup
     result = @nirvana.everything
+    # seems silly that we will go back to JSON format, but thats how I want to store the blobs, 
+    # but I want nirvanahq lib to pass back hashes
+    File.open(BACKUP_FILE, 'w').write(result.to_json)
   end
   
   def trash

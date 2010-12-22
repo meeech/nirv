@@ -8,11 +8,17 @@ module NirvanaHQTests
       @task = JSON.parse(task_json)
     end
 
+    # Will need to rethink this test, or need to get the hang of stubbin, 
+    # since running against a live account will make it lag eventually as tasks get larger.
+    # Maybe speak with E for a new account special just for testing.
     def test_everything
-      @nirvana.everything
-      
-      
-      
+      results = @nirvana.everything
+      keys = []
+      results.each do | obj |
+        keys << obj.keys.to_s
+      end
+      assert keys.include? "user"
+      assert keys.include? "task"
     end
 
     def test_add_task

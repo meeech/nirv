@@ -6,11 +6,10 @@ class NirvanaHQ
     result = `curl -sX POST 'https://api.nirvanahq.com/?api=json&authtoken=#{@token}' -d '#{payload}'`  
   end
 
+  # final form tbd. For now, have it parse out the results of the request, and send that along as a hash obj
   def everything
-    url = "https://api.nirvanahq.com/?requestid=#{UUID::generate}&clienttime=#{Time.now.to_i}&api=rest&authtoken=#{@token}&method=everything&since=0"
-    p url
-    result = `curl -sX GET '#{url}'`
-    p result
+    raw = JSON.parse(`curl -sX GET 'https://api.nirvanahq.com/?api=rest&authtoken=#{@token}&method=everything&since=0'`)
+    raw['results']
   end
 
   # task_details a hash with the task info  
