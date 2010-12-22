@@ -60,6 +60,7 @@ module NirvanaHQTests
     # this fails when run as part of all the tests, but is fine when run solo, after running add.
     # most likely just a timeing issue or order of tests issue. 
     # need depends on, which should be part of a testing lib somewhere.
+    # ie: once a test has been marked deleted, you cant trash it, so this fails. 
     def test_trash_task
       result = @nirvana.trash @task['id']
       result = JSON.parse(result)
