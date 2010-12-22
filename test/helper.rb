@@ -22,9 +22,3 @@ end
 def task_json
   File.open(File.dirname(__FILE__) + "/examples/task.json", 'r').read
 end
-
-def boom_json(name)
-  Boom::Storage.any_instance.stubs(:json_file).
-    returns("test/examples/#{name}.json")
-  Boom.stubs(:storage).returns(Boom::Storage.new)
-end
