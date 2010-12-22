@@ -1,6 +1,6 @@
 require 'test/unit'
 require 'rubygems'
-# require 'redgreen'
+require 'redgreen' if ENV['TM_FILENAME'].nil?
 require 'mocha'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))

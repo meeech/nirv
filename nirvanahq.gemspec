@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   
   # If you have development dependencies, add them here
   s.add_development_dependency "rake"
-  # s.add_development_dependency "redgreen"
+  s.add_development_dependency "redgreen"
   s.add_development_dependency "mocha"
 
   # The list of files to be contained in the gem

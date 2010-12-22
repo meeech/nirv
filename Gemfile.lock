@@ -13,6 +13,7 @@ GEM
     mocha (0.9.10)
       rake
     rake (0.8.7)
+    redgreen (1.2.2)
     simpleconsole (0.1.1)
     uuid (2.3.1)
       macaddr (~> 1.0)
@@ -25,5 +26,6 @@ DEPENDENCIES
   mocha
   nirvanahq!
   rake
+  redgreen
   simpleconsole
   uuid
