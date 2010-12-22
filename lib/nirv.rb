@@ -63,7 +63,11 @@ class Controller < SimpleConsole::Controller
     result = @nirvana.everything
     # seems silly that we will go back to JSON format, but thats how I want to store the blobs, 
     # but I want nirvanahq lib to pass back hashes
-    File.open(BACKUP_FILE, 'w').write(result.to_json)
+    if File.open(BACKUP_FILE, 'w').write(result.to_json)
+      @message = "Your account data has been downloaded and saved to #{BACKUP_FILE}"
+    end
+  rescue Exception => e:
+    @message = "There was a problem: #{e.to_s}"
   end
   
   def trash
@@ -87,6 +91,10 @@ class View < SimpleConsole::View
 
   def add
     puts @message    
+  end
+
+  def backup
+    puts @message
   end
 
   def version

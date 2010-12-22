@@ -11,6 +11,7 @@ Features
 Command Line Tool: 
 
 * Add a task via the CLI
+* Backup
 
 Gem / Library: (API docs coming - have to spend a few hours reading up on RDoc)
 
@@ -19,6 +20,8 @@ But have a look at the lib & tests for some example usage. I've been good about 
 
 Usage
 -----
+
+**Add Task**
 
 basic: 
 
@@ -30,6 +33,10 @@ with tags & a note:
 
 **nirv help** : list all commands
 
+
+**Backup**
+
+**nirv backup**
 
 Todo
 ----
