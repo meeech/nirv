@@ -4,13 +4,13 @@ module NirvanaHQTests
 
   class NirvanaHQTaskTest < Test::Unit::TestCase
     def setup
-      @nirv = NirvanaHQ.new $nirvana_config
+      @nirvana = NirvanaHQ.new $nirvana_config
       @task = JSON.parse(task_json)
     end
 
     def test_add_task
       # task.add expects a hash
-      result = @nirv.add @task
+      result = @nirvana.add @task
       result = JSON.parse(result)
 
       assert result.keys.include?('results')
@@ -25,7 +25,8 @@ module NirvanaHQTests
     end
     
     def test_trash_task
-      result = @nirv.trash @task['id']
+      result = @nirvana.trash @task['id']
+      p JSON.parse(result)
       assert result
     end 
 

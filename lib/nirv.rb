@@ -37,21 +37,10 @@ class Controller < SimpleConsole::Controller
     params[:name] = params[:name]  || params[:id]
 
     if params[:name]
-
-      #prepare payload
-      now = Time.now.to_i
-
-      #set some sane defaults.
-      task = {
-        "method" => "task.save",
-        "id" => UUID.generate,
-        "type" => 0,
-        "_type" => now,
-        "state" => 0,
-        "_state" => now,
-      }
       
-      #@commentplz: anyone know better way to do this? still new to rb
+      #prepare payload
+      # @q: anyone know better way to do this? still new to rb
+      now = Time.now.to_i
       [:name, :tags, :note ].each do | tag |
         begin 
           task[tag] = params[tag] 

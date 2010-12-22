@@ -1,11 +1,6 @@
 {
-    "method":"task.save",
-    "_name":1292917296,
-    "_type":1292917296,
-    "id":"c93fe8f0-ef03-012d-822b-002608047c10",
-    "type":0,
-    "_state":1292917296,
-    "name":"2 test task",
-    "state":0
+    "id":"d93fe8f0-ef03-012d-822b-002608047c10",
+    "name":"4 test task",
+    "_name": 1111111111
 }
 
