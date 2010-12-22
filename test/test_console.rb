@@ -51,6 +51,11 @@ module NirvanaHQTests
 
       assert_equal out.string, "Added task: #{task_name}\n"
     end
+    
+    def test_backup
+      assert false
+    end
+    
 
   end
   
