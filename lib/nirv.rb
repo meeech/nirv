@@ -41,11 +41,11 @@ class Controller < SimpleConsole::Controller
       #prepare payload
       # @q: anyone know better way to do this? still new to rb
       now = Time.now.to_i
-      [:name, :tags, :note ].each do | tag |
+      [:name, :tags, :note ].each do | key |
         begin 
-          task[tag] = params[tag] 
-          task["_#{tag}"] = now 
-        end if params[tag]
+          task[key] = params[key] 
+          task["_#{key}"] = now 
+        end if params[key]
       end
 
       #obviously, need to rethink this, and how we handle errors
