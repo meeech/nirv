@@ -53,12 +53,12 @@ module NirvanaHQTests
       assert result.keys.include?('results')
       assert result['results'][0]
       assert result['results'][0].keys.include?('task')
-      assert_equal "0", result['results'][0]['task']['deleted']
+      assert_equal "0", result['results'][0]['task']['deleted']      
       
-      # and clean it up
+      # pause for a sec, to make sure delete timestamp is later. clean up
+      sleep 1
       @nirvana.delete @task['id']
     end
-
 
   end
 
