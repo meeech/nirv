@@ -53,6 +53,9 @@ module NirvanaHQTests
     end
     
     def test_backup
+
+      SimpleConsole::Application.run([:backup], Controller, View)
+      
       assert false
     end
     

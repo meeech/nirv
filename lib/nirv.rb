@@ -57,6 +57,10 @@ class Controller < SimpleConsole::Controller
     end
   end
   
+  def backup
+    result = @nirvana.everything
+  end
+  
   def trash
     
   end

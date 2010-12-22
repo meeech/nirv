@@ -8,6 +8,13 @@ module NirvanaHQTests
       @task = JSON.parse(task_json)
     end
 
+    def test_everything
+      @nirvana.everything
+      
+      
+      
+    end
+
     def test_add_task
       # task.add expects a hash
       result = @nirvana.add @task
