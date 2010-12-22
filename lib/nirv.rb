@@ -31,7 +31,7 @@ class Controller < SimpleConsole::Controller
     puts "Method #{name} does not exist. Try '#{@my_app_name} help'."
   end
 
-  def add
+  def add 
     # allow basic add action - nirv add "task name" without having 
     # to speicify the name explicitly
     params[:name] = params[:name]  || params[:id]
@@ -66,6 +66,10 @@ class Controller < SimpleConsole::Controller
     else 
       @message = "Missing name of task, which is the bare minimum. Try '#{@my_app_name} help'."
     end
+  end
+  
+  def trash
+    
   end
   
   #totally lifted from UUID gem. 

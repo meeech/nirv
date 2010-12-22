@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + "/helper"
-require 'yaml'
 
 module NirvanaHQTests
 
@@ -11,9 +10,7 @@ module NirvanaHQTests
 
     def test_add_task
       # task.add expects a hash
-
       result = @nirv.add @task
-
       result = JSON.parse(result)
 
       assert result.keys.include?('results')
@@ -23,15 +20,15 @@ module NirvanaHQTests
     end
 
     def test_get_task
+
       assert false
     end
     
-    def test_delete_task
-      #todo
-      assert false
-    end
-    
-    
+    def test_trash_task
+      result = @nirv.trash @task['id']
+      assert result
+    end 
+
   end
 
 end
