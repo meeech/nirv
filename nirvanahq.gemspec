@@ -1,7 +1,7 @@
 # coding: UTF-8
 
 Gem::Specification.new do |s|
-  s.name              = "nirvanahq"
+  s.name              = "nirv"
   s.version           = "0.0.4"
   s.platform          = Gem::Platform::RUBY
   s.authors           = ["Mitchell Amihod"]
