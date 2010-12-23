@@ -101,7 +101,7 @@ class NirvController < SimpleConsole::Controller
     # was lifted from from UUID gem. 
     # version = Gem::Specification.load(File.expand_path("../nirvanahq.gemspec", File.dirname(__FILE__))).version.to_s.split(".").map { |i| i.to_i }
     # @todo move to VERSION txt file
-    @message = @my_app_name << " - " << NirvanaHQ::VERSION
+    @message = NirvanaHQ::VERSION
   end
   
 end
