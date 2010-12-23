@@ -1,7 +1,7 @@
 NirvanaHQ Gem
 =============
 
-A gem for the NirvanaHQ.com API. 
+A gem for the [NirvanaHQ.com](http://nirvanahq.com) API. 
 
 Includes a command line tool, **nirv**
 
@@ -15,45 +15,52 @@ Command Line Tool:
 
 Gem / Library: (API docs coming - have to spend a few hours reading up on RDoc)
 
-But have a look at the lib & tests for some example usage. I've been good about that at least.
+Have a look at the lib & tests for some example usage. 
+
+This is by no means a final version, so you know the deal. 
 
 
-Usage
------
+Usage (CLI)
+-----------
+
+run **`nirv init`**
+
+This will create **~/.nirvanahq/config.rb**. You need to edit that file - change the values for your username and password.
 
 **Add Task**
 
 basic: 
 
-**nirv add "task name"** adds a task to your inbox  
+**`nirv add "task name"`** adds a task to your inbox  
 
 with tags & a note:
 
-**nirv add "task name" -n "this will show up in the task note." -t "Tag 1,Tag 2"**  
-
-**nirv help** : list all commands
-
+**`nirv add "task name" -n "this will show up in the task note." -t "Tag 1,Tag 2"`**  
 
 **Backup**
 
 **nirv backup**
 
-Todo
-----
+Dumps a full copy of your account to ~/.nirvanahq/backup.json. 
 
-* add post install action - create ~/.nirvanahq
-* switch test/example/task.json to task.rb so we can have some dyn info
-* test what happens when a different user tries
+I added it just because. For the data loss paranoid, or those just wanting their data.
 
-~/.nirvanahq/config.rb
+**Everything Else**
 
-Thanks to [ruby learning blog](http://rubylearning.com/blog/2010/12/14/ruby-gems-%E2%80%94-what-why-and-how/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+LearningRubyBlog+%28Learning+Ruby+Blog%29) This helped. 
+**nirv version** obvious.
 
-Thanks to [boom](https://github.com/holman/boom). Was a good example to work & learn from. Seems to be doing something similar to what I wanted to do, so picked up some gem tips there. 
+**nirv help** pretty much the info in this section. 
 
-Between those two, I have been able to cobble together something that works. :) 
 
-Code reviews & suggestions welcome.
+About
+-----
 
-todo
-create config folder if not found
+Wanted a quick way to add tasks from the cli. Also learning ruby, so this seemed a good fit. So, started a gem with a cli tool.
+
+Right now, just focused on adding a task easily. 
+
+gems - what why and how from [ruby learning blog](http://rubylearning.com/blog/2010/12/14/ruby-gems-%E2%80%94-what-why-and-how/) helped, as well as studying  [boom](https://github.com/holman/boom). Was a good example to work & learn from initially. Seems to be doing something similar to what I wanted to do, so picked up some gem tips there. 
+
+comments/examples how to improve it welcome.
+
+no association with nirvanahq.com, so any problems you have, open ticket on the github site. 
