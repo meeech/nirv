@@ -6,7 +6,11 @@ class NirvanaHQ
   TOKEN_FILE = "#{ENV['HOME']}/.nirvanahq/token"
 
   def initialize config
-  
+    
+    if(nil == config)
+      return
+    end
+    
     @username= config[:username]
     @password= config[:password]
 
