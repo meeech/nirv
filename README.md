@@ -7,6 +7,8 @@ Includes a command line tool, **nirv**
 
 NirvanaHQ is an online todo/task manager, based around the GTD method. 
 
+**gem install nirvanahq**
+
 Features
 --------
 
