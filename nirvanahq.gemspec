@@ -8,8 +8,7 @@ Gem::Specification.new do |s|
   s.email             = ["mitchell.amihod@gmail.com"]
   s.homepage          = "http://github.com/meeech/nirvanahq"
   s.summary           = "Gem for NirvanaHQ.com"
-  s.description       = "Gem for interacting with the NirvanaHQ API. Very Alpha. I'm learning ruby as I go. 
-                        Includes a tool for adding tasks from the CLI."
+  s.description       = "Gem for interacting with the NirvanaHQ API. Includes a CLI tool. Pretty alpha."
   s.rubyforge_project = s.name
 
   s.required_rubygems_version = ">= 1.3.6"

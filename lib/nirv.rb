@@ -6,7 +6,7 @@ require "simpleconsole"
 #   - the raise keeps bubbling up so need to play with those more to see what i'm doing wrong
 # @todo How do you test a simpleconsole program? Ay advice would be appreciated tbd
 
-class Controller < SimpleConsole::Controller
+class NirvController < SimpleConsole::Controller
 
   attr_reader :nirvana
 
@@ -87,7 +87,7 @@ class Controller < SimpleConsole::Controller
   
 end
 
-class View < SimpleConsole::View
+class NirvView < SimpleConsole::View
 
   def add
     puts @message    

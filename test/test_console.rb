@@ -20,24 +20,38 @@ end
 
 module NirvanaHQTests
 
-  class TestNirvConsole < Test::Unit::TestCase
+  class NirvanaHQConsoleDataTest < Test::Unit::TestCase
+
+    def test_init
+      out = capture_stdout do
+        SimpleConsole::Application.run([:init], NirvController, NirvView)
+      end
+
+      assert out.string.include? "Method fakeaction does not exist"
+
+      config_path = "#{ENV['HOME']}/.nirvanahq/config.rb"
+      assert File.exists?(config_path), "Missing Config File: #{config_path}"
+    end
+
+  end
+
+  class NirvanaHQConsoleTest < Test::Unit::TestCase
 
     def test_method_missing
       out = capture_stdout do
-        SimpleConsole::Application.run([:fakeaction], Controller, View)
+        SimpleConsole::Application.run([:fakeaction], NirvController, NirvView)
       end
-
       assert out.string.include? "Method fakeaction does not exist"
     end
 
     def test_nirvanahq_instance
-      console = Controller.new
-      assert_equal NirvanaHQ, console.nirvana.class
+      console =NirvController.new
+      assert_instance_of NirvanaHQ, console.nirvana
     end
 
     def test_version
       out = capture_stdout do
-        SimpleConsole::Application.run([:version], Controller, View)
+        SimpleConsole::Application.run([:version], NirvController, NirvView)
       end
       assert out.string.include? " - "
     end
@@ -46,15 +60,15 @@ module NirvanaHQTests
     def test_add
       task_name = "Test Task Add"
       out = capture_stdout do
-        SimpleConsole::Application.run([:add, task_name], Controller, View)
+        SimpleConsole::Application.run([:add, task_name], NirvController, NirvView)
       end
 
       assert_equal out.string, "Added task: #{task_name}\n"
     end
     
     def test_backup
-      SimpleConsole::Application.run([:backup], Controller, View)
-      assert File.exists? Controller::BACKUP_FILE
+      SimpleConsole::Application.run([:backup], NirvController, NirvView)
+      assert File.exists? NirvController::BACKUP_FILE
     end
     
 

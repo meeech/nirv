@@ -4,4 +4,4 @@ $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 require "nirvanahq"
 require "nirv"
 
-SimpleConsole::Application.run(ARGV, Controller, View)
+SimpleConsole::Application.run(ARGV, NirvController, NirvView)
