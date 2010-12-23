@@ -1,7 +1,7 @@
 # coding: UTF-8
 
 Gem::Specification.new do |s|
-  s.name              = "nirv"
+  s.name              = "nirvanahq"
   s.version           = "0.0.4"
   s.platform          = Gem::Platform::RUBY
   s.authors           = ["Mitchell Amihod"]
@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   # If you have development dependencies, add them here
   s.add_development_dependency "rake"
   s.add_development_dependency "redgreen"
-  s.add_development_dependency "mocha"
+  # s.add_development_dependency "mocha"
 
   # The list of files to be contained in the gem
   s.files         = `git ls-files`.split("\n")
