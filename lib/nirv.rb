@@ -77,6 +77,9 @@ class NirvController < SimpleConsole::Controller
   
   def init
     unless File.exists? CONFIG_FILE
+      
+      FileUtils.mkdir File.dirname(CONFIG_FILE) unless File.exists?(File.dirname(CONFIG_FILE))
+      
       puts "Creating #{CONFIG_FILE}..." 
       FileUtils.copy(CONFIG_SAMPLE_FILE, CONFIG_FILE)
       @message = "Edit #{CONFIG_FILE} and add your login info."
