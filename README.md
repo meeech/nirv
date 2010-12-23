@@ -29,7 +29,7 @@ Usage (CLI)
 
 First thing: run **`nirv init`**
 
-This will create **~/.nirvanahq/config.rb**. You need to edit that file - change the values for your username and password.
+This will create **~/.nirvanahq/config.rb**. You need to edit that file - change the values for your username and password. For now, you have to make your own md5 of you password, and put that in there. Sorry :/
 
 **Add Task**
 
