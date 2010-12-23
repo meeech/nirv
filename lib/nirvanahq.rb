@@ -1,7 +1,10 @@
 require 'rubygems'
 require 'json'
 
-require "#{ENV['HOME']}/.nirvanahq/config.rb"
+begin
+  require "#{ENV['HOME']}/.nirvanahq/config.rb"
+rescue LoadError => e
+end
 
 require 'nirvanahq/auth'
 require 'nirvanahq/task'

@@ -26,10 +26,7 @@ module NirvanaHQTests
       out = capture_stdout do
         SimpleConsole::Application.run([:init], NirvController, NirvView)
       end
-
-      assert out.string.include? "Method fakeaction does not exist"
-
-      config_path = "#{ENV['HOME']}/.nirvanahq/config.rb"
+      config_path = NirvController::CONFIG_FILE
       assert File.exists?(config_path), "Missing Config File: #{config_path}"
     end
 

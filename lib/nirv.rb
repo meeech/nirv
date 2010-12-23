@@ -17,11 +17,16 @@ class NirvController < SimpleConsole::Controller
           :text => {:n => :note}
 
   BACKUP_FILE = "#{ENV['HOME']}/.nirvanahq/backup.json"
+  CONFIG_FILE = "#{ENV['HOME']}/.nirvanahq/config.rb"
+  CONFIG_SAMPLE_FILE = File.dirname(__FILE__)+"/nirvanahq/config.sample.rb"
 
   def initialize
     super
     @my_app_name = 'nirv'
-    @nirvana = NirvanaHQ.new $nirvana_config    
+    #@todo move config into yaml, load from that. 
+    if ARGV[0] != "init"      
+      @nirvana = NirvanaHQ.new $nirvana_config 
+    end
   end
   
   def default
@@ -70,6 +75,17 @@ class NirvController < SimpleConsole::Controller
     @message = "There was a problem: #{e.to_s}"
   end
   
+  def init
+    unless File.exists? CONFIG_FILE
+      puts "Creating #{CONFIG_FILE}..." 
+      FileUtils.copy(CONFIG_SAMPLE_FILE, CONFIG_FILE)
+      @message = "Edit #{CONFIG_FILE} and add your login info."
+    else
+      @message = "You already have a config file in: #{CONFIG_FILE}"
+    end
+
+  end
+  
   def trash
     
   end
@@ -94,6 +110,10 @@ class NirvView < SimpleConsole::View
   end
 
   def backup
+    puts @message
+  end
+
+  def init
     puts @message
   end
 
