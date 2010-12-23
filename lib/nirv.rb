@@ -24,7 +24,7 @@ class NirvController < SimpleConsole::Controller
     super
     @my_app_name = 'nirv'
     #@todo move config into yaml, load from that. 
-    if ARGV[0] != "init"      
+    if ARGV[0] != "init" && ARGV[0] != "help"       
       @nirvana = NirvanaHQ.new $nirvana_config 
     end
   end
@@ -88,7 +88,7 @@ class NirvController < SimpleConsole::Controller
     end
 
   end
-  
+
   def trash
     
   end
@@ -126,6 +126,10 @@ class NirvView < SimpleConsole::View
 
   def default
     puts @message    
+  end
+  
+  def help
+    puts "Run 'nirv init' if you want to plan to use the command line tool.\n" unless File.exists?(NirvController::CONFIG_FILE)
   end
   
 end
