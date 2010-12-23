@@ -130,6 +130,12 @@ class NirvView < SimpleConsole::View
   
   def help
     puts "Run 'nirv init' if you want to plan to use the command line tool.\n" unless File.exists?(NirvController::CONFIG_FILE)
+    puts 'nirv add "task name"'
+    puts 'nirv add "task name" -n "this will show up in the task note." -t "Tag 1,Tag 2"'
+    puts "\nnirv backup : Dumps a full copy of your account to ~/.nirvanahq/backup.json"
+    puts "\nnirv version"
+    puts "nirv help"
+    puts "\nVisit https://github.com/meeech/nirv for more help"
   end
   
 end
