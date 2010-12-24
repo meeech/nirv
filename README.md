@@ -69,6 +69,8 @@ You can examine the nirvanahq api in your browser - their web app uses it, so it
 
 comments/examples how to improve it welcome. 
 
+Feature requests always welcome.
+
 no association with nirvanahq.com, so any problems you have, open ticket on the [github site](https://github.com/meeech/nirv/issues). 
 
 m.
