@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name              = "nirvanahq"
-  s.version           = "0.1.0"
+  s.version           = "0.1.1"
   s.platform          = Gem::Platform::RUBY
   s.authors           = ["Mitchell Amihod"]
-  s.email             = ["mitchell.amihod@gmail.com"]
-  s.homepage          = "http://github.com/meeech/nirvanahq"
+  s.email             = ["mitchell@amihod.com"]
+  s.homepage          = "http://github.com/meeech/nirv"
   s.summary           = "Gem for NirvanaHQ.com"
   s.description       = "Gem for interacting with the NirvanaHQ API. Includes a CLI tool. Pretty alpha."
   s.rubyforge_project = s.name
