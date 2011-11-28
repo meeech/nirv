@@ -50,7 +50,7 @@ class NirvController < SimpleConsole::Controller
       task = {}
       [:name, :tags, :note ].each do | key |
         begin 
-          task[key] = params[key] 
+          task[key] = params[key].gsub("'", "&rsquo;")
           task["_#{key}"] = now 
         end if params[key]
       end
