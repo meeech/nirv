@@ -3,12 +3,12 @@ require 'uuid'
 class NirvanaHQ
 
   def post payload
-    result = `curl -sX POST 'https://api.nirvanahq.com/?api=json&authtoken=#{@token}' -d '#{payload}'`  
+    result = `curl -sX POST 'https://api.nirvanahq.com/?api=json&appid=gem&authtoken=#{@token}' -d '#{payload}'`  
   end
 
   # final form tbd. For now, have it parse out the results of the request, and send that along as a hash obj
   def everything
-    raw = JSON.parse(`curl -sX GET 'https://api.nirvanahq.com/?api=rest&authtoken=#{@token}&method=everything&since=0'`)
+    raw = JSON.parse(`curl -sX GET 'https://api.nirvanahq.com/?api=rest&appid=gem&authtoken=#{@token}&method=everything&since=0'`)
     raw['results']
   end
 
