@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    nirvanahq (0.1.0)
+    nirvanahq (0.1.4)
       json
       simpleconsole
       uuid
 
 GEM
   specs:
-    json (1.4.6)
+    json (1.6.1)
     macaddr (1.0.0)
     rake (0.8.7)
     redgreen (1.2.2)
@@ -20,9 +20,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  json
   nirvanahq!
   rake
   redgreen
-  simpleconsole
-  uuid

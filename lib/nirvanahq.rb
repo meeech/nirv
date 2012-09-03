@@ -10,5 +10,5 @@ require 'nirvanahq/auth'
 require 'nirvanahq/task'
 
 class NirvanaHQ
-  VERSION = '0.1.3'
+  VERSION = '0.1.4'
 end
