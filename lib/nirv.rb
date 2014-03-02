@@ -71,7 +71,7 @@ class NirvController < SimpleConsole::Controller
     if File.open(BACKUP_FILE, 'w').write(result.to_json)
       @message = "Your account data has been downloaded and saved to #{BACKUP_FILE}"
     end
-  rescue Exception => e:
+  rescue Exception => e
     @message = "There was a problem: #{e.to_s}"
   end
   
